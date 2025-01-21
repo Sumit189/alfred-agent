@@ -237,13 +237,20 @@ function App() {
 
     const instructions = currentAgent?.instructions || "";
     const tools = currentAgent?.tools || [];
+    const voicesMapByAgent: { [key: string]: string } = {
+      alfred: "ash",
+      luciusFox: "echo",
+      kent: "verse",
+    }
+
+    console.log("voice: ", voicesMapByAgent[selectedAgentName]);
 
     const sessionUpdateEvent = {
       type: "session.update",
       session: {
         modalities: ["text", "audio"],
         instructions,
-        voice: "ash",
+        voice: voicesMapByAgent[selectedAgentName],
         input_audio_format: "pcm16",
         output_audio_format: "pcm16",
         input_audio_transcription: { model: "whisper-1" },
