@@ -5,4 +5,4 @@ export const allAgentSets: AllAgentConfigsType = {
   alfred
 };
 
-export const defaultAgentSetKey = "simpleExample";
+export const defaultAgentSetKey = "alfred";
